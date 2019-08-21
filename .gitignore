@@ -1,2 +1,5 @@
 # I want to ignore all images:
 *.png
+
+# I want to ignore following folders:
+node_modules

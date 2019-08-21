@@ -1,0 +1,48 @@
+<!-- Home -->
+<div class="homeBlock flex" ng-show="show_home">
+    <div class="half flex flexColumnCenter" style="height: 400px">
+        <h1>Income</h1>
+        <form action="" class="incomeAdd flex">
+            <p>Date: <input type="text" placeholder="dd.MM.YYYY" ng-model="income_date"></p>
+            <label>
+           From:
+            <select ng-model="income_select_source">
+                <option ng-repeat="source in sources track by $index" value="{{source}}">{{source}}</option>
+            </select>
+        </label>
+
+            <label>
+           To:
+            <select ng-model="income_select_save">
+                <option ng-repeat="save in saves track by $index" value="{{save.name}}">{{save.name}}: {{save.sum}}</option>
+            </select>
+        </label>
+            <p>Amount: <input type="text" ng-model="income_amount"></p>
+            <br>
+            <button ng-click="income_add()">ADD</button>
+        </form>
+    </div>
+    <div class="half flex flexColumnCenter" style="height: 400px">
+        <h1>Expense</h1>
+        <div class="expenseAdd flex">
+            <p>Date: <input type="text" placeholder="dd.MM.YYYY" ng-model="expence_date"></p>
+            <label>
+           From:
+            <select ng-model="expence_select_exp_save">
+                <option ng-repeat="exp_save in saves track by $index" value="{{exp_save.name}}">{{exp_save.name}}: {{exp_save.sum}}</option>
+            </select>
+        </label>
+
+            <label>
+           For:
+            <select ng-model="expence_select_cat_exp">
+                <option ng-repeat="categories in catExp track by $index" value="{{categories}}">{{categories}}</option>
+            </select>
+        </label>
+            <p>Amount: <input type="text" ng-model="expence_amount"></p>
+            <br>
+            <button ng-click="expence_add()">ADD</button>
+        </div>
+
+    </div>
+</div>

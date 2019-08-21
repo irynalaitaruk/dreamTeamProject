@@ -1,0 +1,50 @@
+<div class="historyBlock" ng-show="show_history">
+  <br>
+   
+   <div  class="flex flexColumnCenter">
+       <button ng-click="load_history()">LOAD</button>
+   </div>
+    <div class="flex">
+        <div class="half">
+           <h3>Incomes</h3>
+           <input type="text" placeholder="search in incomes" ng-model="searchInArr1" class="searchInput">
+           <br>
+           <br>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Sum</th>
+                    <th>Sources</th>
+                    <th>Saves</th>
+                </tr>
+                <tr ng-repeat="arr1 in history_array_income | filter:searchInArr1">
+                    <td>{{arr1.date}}</td>
+                    <td>{{arr1.sum}}</td>
+                    <td>{{arr1.sources_id}}</td>
+                    <td>{{arr1.saves_id}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="half">
+           <h3>Expences</h3>
+           <input type="text" placeholder="search in expences" ng-model="searchInArr2" class="searchInput">
+           <br>
+            <br>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Sum</th>
+                    <th>Saves</th>
+                    <th>Expences cat</th>
+                </tr>
+                <tr ng-repeat="arr2 in history_array_expence | filter:searchInArr2">
+                    <td>{{arr2.date}}</td>
+                    <td>{{arr2.sum}}</td>
+                    <td>{{arr2.saves_id}}</td>
+                    <td>{{arr2.categoryExp_id}}</td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</div>
